@@ -260,9 +260,9 @@ mod tests {
         let result = create_question(question, questions_dao.as_ref()).await;
 
         assert!(result.is_err());
-        assert!(
-            std::mem::discriminant(&result.unwrap_err())
-                == std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
+        assert_eq!(
+            std::mem::discriminant(&result.unwrap_err()),
+            std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
         );
     }
 
@@ -298,9 +298,9 @@ mod tests {
         let result = read_questions(questions_dao.as_ref()).await;
 
         assert!(result.is_err());
-        assert!(
-            std::mem::discriminant(&result.unwrap_err())
-                == std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
+        assert_eq!(
+            std::mem::discriminant(&result.unwrap_err()),
+            std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
         );
     }
 
@@ -337,9 +337,9 @@ mod tests {
         let result = delete_question(question_id, questions_dao.as_ref()).await;
 
         assert!(result.is_err());
-        assert!(
-            std::mem::discriminant(&result.unwrap_err())
-                == std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
+        assert_eq!(
+            std::mem::discriminant(&result.unwrap_err()),
+            std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
         );
     }
 
@@ -385,9 +385,9 @@ mod tests {
         let result = create_answer(answer, answers_dao.as_ref()).await;
 
         assert!(result.is_err());
-        assert!(
-            std::mem::discriminant(&result.unwrap_err())
-                == std::mem::discriminant(&HandlerError::BadRequest("".to_owned()))
+        assert_eq!(
+            std::mem::discriminant(&result.unwrap_err()),
+            std::mem::discriminant(&HandlerError::BadRequest("".to_owned()))
         );
     }
 
@@ -410,9 +410,9 @@ mod tests {
         let result = create_answer(answer, answers_dao.as_ref()).await;
 
         assert!(result.is_err());
-        assert!(
-            std::mem::discriminant(&result.unwrap_err())
-                == std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
+        assert_eq!(
+            std::mem::discriminant(&result.unwrap_err()),
+            std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
         );
     }
 
@@ -456,9 +456,9 @@ mod tests {
         let result = read_answers(question_id, answers_dao.as_ref()).await;
 
         assert!(result.is_err());
-        assert!(
-            std::mem::discriminant(&result.unwrap_err())
-                == std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
+        assert_eq!(
+            std::mem::discriminant(&result.unwrap_err()),
+            std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
         );
     }
 
@@ -495,9 +495,9 @@ mod tests {
         let result = delete_answer(answer_id, answers_dao.as_ref()).await;
 
         assert!(result.is_err());
-        assert!(
-            std::mem::discriminant(&result.unwrap_err())
-                == std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
+        assert_eq!(
+            std::mem::discriminant(&result.unwrap_err()),
+            std::mem::discriminant(&HandlerError::InternalError("".to_owned()))
         );
     }
 }
