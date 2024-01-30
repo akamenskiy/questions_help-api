@@ -1,3 +1,5 @@
+mod handlers_inner;
+
 use crate::models::*;
 use axum::{response::IntoResponse, Json};
 
